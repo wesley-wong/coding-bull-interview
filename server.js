@@ -34,7 +34,22 @@ app.use("/api/", dbRoutes(knex));
 
 // Home page
 app.get("/", (req, res) => {
-  res.render("index");
+  knex
+  .select('*')
+  .from('blogposts')
+  .then(results => {
+    console.log('results from db', results);
+    let templateVars = {};
+    results.forEach((item,index) => {
+      templateVars[index] = {
+        id: item.id,
+        title: item.title,
+        body: item.body
+      }
+    })
+    console.log('templateVars', templateVars)
+    res.render("index");
+  })
 });
 
 app.listen(PORT, () => {

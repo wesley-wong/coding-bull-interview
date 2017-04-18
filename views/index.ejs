@@ -45,6 +45,21 @@
           <div class='col-sm-2'>
           </div>
           <div class='col-sm-8'>
+            <% entries.forEach(item => { %>
+              <div class='well'>
+                <div class="media">
+                  <div class="media-left">
+                    <a href="#">
+                      <img class="media-object" src="https://placebear.com/100/100" alt="Just a placeholder">
+                    </a>
+                  </div>
+                  <div class="media-body">
+                    <h4 class="media-heading"><%- item.title %></h4>
+                    <%- item.body %>
+                  </div>
+                </div>
+              </div>
+            <% }) %>
           </div>
           <div class='col-sm-2'>
           </div>

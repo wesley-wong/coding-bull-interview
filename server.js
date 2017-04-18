@@ -39,16 +39,19 @@ app.get("/", (req, res) => {
   .from('blogposts')
   .then(results => {
     console.log('results from db', results);
-    let templateVars = {};
+    let templateVars = { entries: []};
     results.forEach((item,index) => {
-      templateVars[index] = {
-        id: item.id,
-        title: item.title,
-        body: item.body
-      }
+      let key = `entry${index}`
+      templateVars.entries.unshift(
+        {
+          id: item.id,
+          title: item.title,
+          body: item.body
+        }
+      )
     })
-    console.log('templateVars', templateVars)
-    res.render("index");
+    console.log('templateVars', templateVars.entries)
+    res.render("index", templateVars);
   })
 });
 

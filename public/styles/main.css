@@ -2,3 +2,7 @@ body {
   background: floralwhite;
   font-family: 'Open sans', sans-serif;
 }
+
+.full-width {
+  width: 100%;
+}

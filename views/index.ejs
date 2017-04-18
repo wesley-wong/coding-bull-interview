@@ -14,9 +14,42 @@
 </head>
 <body>
   <%- include ./partials/header.ejs %>
-  <div class='container'>
-    <h1>Hello World</h1>
-  </div>
+
+    <!-- Page-specific (main) content here -->
+    <main class="container">
+
+      <!-- User creates new tweets here -->
+      <section class="new-post">
+        <div class='row'>
+          <div class='col-sm-2'>
+          </div>
+          <div class='col-sm-8'>
+            <form method='post' action='/api/new'>
+            <h1>
+              Make a Journal Entry
+            </h1>
+              <div class='input-group full-width'>
+                <input class='full-width form-control' name='title' type='text' placeholder='Title' autoFocus='true' />
+                <hr />
+                <textarea class='full-width form-control' name='body' type='text' rows='5' placeholder='How are you feeling today?'></textarea>
+                <hr />
+                <button type='submit' class='btn'>Submit</button>
+              </div>
+            </form>
+          </div>
+          </div>
+          <div class='col-sm-2'>
+          </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Here is where the most recent tweets pop up -->
+      <section id='post-container'>
+      </section>
+
+    </main>
 
 
   <!-- jQuery JS-->

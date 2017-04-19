@@ -1,6 +1,9 @@
 # Coding Bull Interview
 
-### Simple Express/Node boilerplate
+This is a 1.5 hour project (starting at commit 2055229) to make an mini-blog app for The Coding Bull.
+
+* As a user I want to be able to make a blog Post
+* As a user I should see a list of posts in descending order
 
 #### How to run:
 
